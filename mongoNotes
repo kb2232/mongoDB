@@ -1,0 +1,50 @@
+mongod --directoryperdb --dbpath ../data/db --logpath ../log/mongo.log --logappend --rest --install
+
+export PATH=<mongodb-install-directory>/bin:$PATH
+
+-->mongo (remember mongo database is a NoSQL)
+1. start the mongod
+>>sudo mongod
+2. on a different terminal window enter
+>>export PATH=/Users/kb2232/Desktop/udemy/mongodb/mongodb-osx-x86_64-3.0.15/bin:$PATH
+>>mongo
+
+
+###PROMISE
+A promise is a tool used to manage asynchronous code.
+If a code needs to be executed in the future, like after a certain time - then we use promise;
+Promise can be:
+1. unresolved - waiting for the user / piece of code to finish - a function that calls your code
+2. resolved - everything went well - this is handled with .then(()=>{...})
+3. rejected - if a piece of code fails - this is handled with .catch(()=>{...})
+
+###mongo
+----BROWSER------WEB-APP
+      ^
+      |
+----NODE-----
+    |||
+    |||
+---Mongoose(library - gives us nice API to work with Mongo--
+      ^
+      |
+---Mongo-----
+
+####The way mongo works is via instances:
+Say today you work on collection of books and collection of Users:
+Each of these collections are one instance created in mongo itself.
+
+                1. Mongo - database#1
+                  2. collection of books
+                    2a. book1
+                    2b. book2
+                    2c. book3
+                3. collection of Users
+                    3a. user1
+                    3b. user2
+
+                1. Mongo - database#2
+                  2. collection of movies
+                  3. collection of images
+
+########CRUD ----create --- read --- update --- delete
