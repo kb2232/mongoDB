@@ -53,12 +53,9 @@ Each of these collections are one instance created in mongo itself.
 A single mongo database can have multiple internal databases;
 Inside each internal database can have multiple collections. Where one collection is a type of data, like collection of users or collection of stories.
 
+
                     CORE idea in Mongoose is below:
 ########CRUD ----create --- read --- update --- delete;
-
-
-
-
 
 
 
