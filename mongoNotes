@@ -23,15 +23,15 @@ Most developers just handle the success or failure of the promises.
 
 ###mongo
 ----BROWSER------WEB-APP
-      ^
-      |
-----NODE-----
-    |||
-    |||
----Mongoose(library - gives us nice API to work with Mongo--
-      ^
-      |
----Mongo-----
+            ^
+            |
+        ----NODE-----
+            |||
+            |||
+        ---Mongoose is an object data mapping (ODM)-(library - gives us nice API to work with Mongo)
+            ^
+            |
+        ---Mongo-----
 
 ####The way mongo works is via instances:
 Say today you work on collection of books and collection of Users:
@@ -42,7 +42,7 @@ Each of these collections are one instance created in mongo itself.
                     2a. book1
                     2b. book2
                     2c. book3
-                3. collection of Users
+                  3. collection of Users
                     3a. user1
                     3b. user2
 
@@ -50,4 +50,53 @@ Each of these collections are one instance created in mongo itself.
                   2. collection of movies
                   3. collection of images
 
+A single mongo database can have multiple internal databases;
+Inside each internal database can have multiple collections. Where one collection is a type of data, like collection of users or collection of stories.
+                    CORE idea in Mongoose is below:
 ########CRUD ----create --- read --- update --- delete
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#CREDIT - i give most credit to Stephen Grider, whom I have learn so much from in order to build my own start-up.
+Thank you Stephen Grider
