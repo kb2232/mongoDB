@@ -25,6 +25,9 @@
       });
 
     }
+    //startgame() returns the promise that was created.
+    //.then is for what happens when the promise is resolved.
+    //.catch if for what happens when the promise is rejected.
     StartGame()
     .then(()=>{alert("You won!! your click is " + counter)})
     .catch(()=>{alert("You lose!!")});

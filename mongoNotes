@@ -18,6 +18,9 @@ Promise can be:
 2. resolved - everything went well - this is handled with .then(()=>{...})
 3. rejected - if a piece of code fails - this is handled with .catch(()=>{...})
 
+Most libraries: Jquery, Axios, Mongoose do not require you to create a new promise.
+Most developers just handle the success or failure of the promises.
+
 ###mongo
 ----BROWSER------WEB-APP
       ^
