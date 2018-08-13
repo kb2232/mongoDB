@@ -6,7 +6,7 @@
 
 # Project 1
   * the goal is to use the CRUD method
-    - mocha library is for testing
+    - mocha library is for testing - very popular testing framework
     - nodemon is for live server
     - mongoose is a library that gives you nice API to connect with mongo
   * IDEA
