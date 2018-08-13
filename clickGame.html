@@ -18,6 +18,7 @@
       });
 
       return new Promise((resolve, reject) => {
+        //whatever code is in here must happen sometimes in the future.
         setTimeout(() => {
           (counter > 5) ? resolve() : reject();
         }, 2000);
