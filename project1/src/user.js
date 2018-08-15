@@ -12,7 +12,7 @@ const UserSchema = new Schema({
 // i want to connect this collection to the schema and give it a name.
 // the name "UserInstance" is what allows us to create instances of the model.
 // the name of the collection is "userCollection"
-const UserInstance = mongoose.model('userCollection',UserSchema);
+const UserInstance = mongoose.model('usersCollection',UserSchema);
 
 //if this file was to be imported, we need to give access to the model in our collection;
 

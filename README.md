@@ -85,3 +85,16 @@
     });
     //to run this - enter on your terminal >>npm run test 
 ```
+# Simple Mongo commands
+  - show database
+  >> show dbs
+  - use database
+  >> use (name-of-database)
+  - show all the collections in this internal database;
+  >> show collections
+  - to see all documents in collections - similar to select * from tablename in sql;
+  >> db.(enter collection name).find()
+  - to make it look pretty;
+  >> db.(enter collection name).find().pretty()
+  - drop your database;
+  >> db.dropDatabase()
