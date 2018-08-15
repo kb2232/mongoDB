@@ -23,53 +23,45 @@
     4. delete_test.js
 
 # Connection to database on your machine
-bring in mongoose
-
->> const mongoose = require('mongoose');
-
-connect to mongo db from your laptop(localhost) - user_test is the name of one of our internal database.
-we do not need to create a database like in SQL. we just make one of the internal databases.
-we then add collections to it.
-
->> mongoose.connect('mongodb://localhost/user_test');
-
-we connect to the internal database. Once it is done attempting to connect it return promise.
-we catch the event handlers with .once(it went well), and .on(it didnt go well);
-these are analagous to .then() and .catch();
-
->> mongoose.connection
-    .once('open',()=>{
-      console.log("Good to go");
-    })
-    .on('error',(error)=>{
-      console.warn('Warning',error);
-    });
+```javascript
+    //bring in mongoose
+    const mongoose = require('mongoose');
+    //connect to mongo db from your laptop(localhost) - user_test is the name of one of our internal database.
+    // we do not need to create a database like in SQL. we just make one of the internal databases.
+    //we then add collections to it.
+    mongoose.connect('mongodb://localhost/user_test');
+    //we connect to the internal database. Once it is done attempting to connect it return promise.
+    //we catch the event handlers with .once(it went well), and .on(it didnt go well);
+    //these are analagous to .then() and .catch();
+    mongoose.connection
+      .once('open',()=>{
+        console.log("Good to go");
+      })
+      .on('error',(error)=>{
+        console.warn('Warning',error);
+      });
+```
 
 
 # Database structure
-  * User model - this is one of our collection - remember that one internal database can have multiple collections.
-  * The User model collection has a schema:
-    - name, which is a string. In essence, every instances of name must be a string.
+```javascript
+    //bring in mongoose
+    const mongoose = require('mongoose');
+    // one of the properties in mongoose is a Schema;
+    const Schema = mongoose.Schema;
+    // in my internal database, i have a collection - within this collection, i will create a schema for it
+    // so that all instances for this specific collection follow this schema.
 
-//bring in mongoose
->> const mongoose = require('mongoose');
+    const UserSchema = new Schema({
+      name:String
+    });
 
-// one of the properties in mongoose is a Schema;
+    // i want to connect this collection to the schema and give it a name.
+    // the name "UserInstance" is what allows us to create instances of the model.
+    // the name of the collection is "userCollection"
+    const UserInstance = mongoose.model('userCollection',UserSchema);
 
->> const Schema = mongoose.Schema;
+    //if this file was to be imported, we need to give access to the model in our collection;
 
-// in my internal database, i have a collection - within this collection, i will create a schema for it so that all instances for this specific collection follow this schema.
-
->> const UserSchema = new Schema({
->>    name:String
->>  });
-
-// i want to connect this collection to the schema and give it a name.
-// the name "UserInstance" is what allows us to create instances of the model.
-// the name of the collection is "userCollection"
-
->> const UserInstance = mongoose.model('userCollection',UserSchema);
-
-//if this file was to be imported, we need to give access to the model in our collection;
-
->> module.exports = UserInstance; 
+    module.exports = UserInstance;
+```
