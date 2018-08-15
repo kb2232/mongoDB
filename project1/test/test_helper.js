@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 //to get rid of the warning about deprecating...we need ES6 implementation of promises;
-mongoose.Promise=global.Promise;
+mongoose.Promise = global.Promise;
 
 
 //connect to mongo db from your laptop(localhost) - usertest is the name of one of our internal database.

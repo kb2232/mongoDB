@@ -40,6 +40,16 @@
       .on('error',(error)=>{
         console.warn('Warning',error);
       });
+    
+    //the "HOOK" below will run before each test;
+    //this will delete any collections before we run test.
+    //we need to make sure that mocha understands to run beforeEach before //running our test.
+    //caling done tells mocha it can run next text;
+
+    beforeEach((done)=>{
+      mongoose.connection.collections.userscollections.drop(()=>{
+          done();
+      });
 ```
 
 
@@ -84,6 +94,29 @@
       })
     });
     //to run this - enter on your terminal >>npm run test 
+  const User = require('../src/user');
+  describe('Creating records',()=>{
+    it('saves a user',(done)=>{
+    //creating an instance of the User model.
+    const newUser = new User({
+      name: "Kunle"
+    });
+    //to save it into our innternal database - use save();
+        //save() returns a promise bc it's asynchronouse
+    //we now want to assert that newUser is actually new;
+    newUser.save()
+    .then(()=>{
+        assert(!newUser.isNew);
+      //we call done to say it can run next text;
+        done();
+      });
+    });
+  })
+    /*
+    Any time you run 
+    >> npm run test
+    a new instance with internal unique id will be created.
+    */
 ```
 # Simple Mongo commands
   - show database
