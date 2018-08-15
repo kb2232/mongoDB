@@ -65,3 +65,23 @@
 
     module.exports = UserInstance;
 ```
+  # TESTING - using mocha - describe(), it() and assert()
+  ```javascript
+      /*
+    decribe(arg1,arg2);
+    it(arg1,arg2);
+    arg1- string: describes test we about to write- string name is up to you
+    arg2- function;
+    "it" and "describe" are unique to mocha
+    Mocha gives global access to both "it" and "describe";
+    We need to assert a condition within the it();
+    - go to your package.json file and enter "test":"mocha"
+    */
+    const assert = require('assert');
+    describe('testing',()=>{
+      it('check for sum below',()=>{
+        assert(1+1===2);
+      })
+    });
+    //to run this - enter on your terminal >>npm run test 
+```
